@@ -1,0 +1,27 @@
+# obtener todos los contactos DONE
+GET http://localhost:5000/contactos
+
+# borrar todos los contactos DONE
+DELETE http://localhost:5000/contactos
+
+# borrar todos los contactos
+POST http://localhost:5000/contactos
+Content-Type: application/json
+
+[
+	{"nombre": "Pedro Mauro", "email": "ppmauro6@gmail.com"},
+	{"nombre": "Jane", "email": "gatamarmolada@gmail.com"}
+]
+
+# obtener un contacto DONE
+GET http://localhost:5000/contactos/4
+
+# borrar un contacto
+DELETE http://localhost:5000/contactos/1234
+
+# actualizar un contacto
+PUT http://localhost:5000/contactos/1234
+Content-Type: application/json
+
+{"nombre": "Pedro", "email": "pedro@hotmail.com"}
+

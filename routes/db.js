@@ -10,9 +10,10 @@ const pool = new Pool({
 router.get('/', async (req, res) => {
     try {
 	const client = await pool.connect()
-	const result = await client.query('SELECT * FROM test_table');
+	const result = await client.query('SELECT * FROM contactos');
 	const results = { 'results': (result) ? result.rows : null};
-	res.render('pages/db', results );
+	console.log(results);
+	res.render('db', { contacts: results });
 	client.release();
     } catch (err) {
 	console.error(err);

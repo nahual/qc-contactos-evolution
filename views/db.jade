@@ -1,5 +1,7 @@
 extends layout
 
-ul
-	for contact in contacts
-		li= contact.name
+block content
+  h1 Hello #{name}
+  ul
+    for contact in results
+      li= contact.name

@@ -12,8 +12,9 @@ router.get('/', async (req, res) => {
 	const client = await pool.connect()
 	const result = await client.query('SELECT * FROM contactos');
 	const results = { 'results': (result) ? result.rows : null};
-	console.log(results);
-	res.render('db', { contacts: results.results });
+	const viewData = {...results, name: "Pedro"};
+	console.log("view data", viewData);
+	res.render('db', viewData);
 	client.release();
     } catch (err) {
 	console.error(err);

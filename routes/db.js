@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 	const result = await client.query('SELECT * FROM contactos');
 	const results = { 'results': (result) ? result.rows : null};
 	console.log(results);
-	res.render('db', { contacts: results });
+	res.render('db', { contacts: results.results });
 	client.release();
     } catch (err) {
 	console.error(err);

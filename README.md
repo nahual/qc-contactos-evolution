@@ -15,6 +15,7 @@ Se pueden ver en el archivo [queries.sql](https://github.com/nahual/qc-contactos
 
 # Proximamente
 
+* frontend
 * login (mantener una sesión con cookies)
 * validación de mail duplicado
 * lo que se necesite

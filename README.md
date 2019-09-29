@@ -7,10 +7,10 @@ Contactos con frontend, backend y persistencia - Ejercicio de QC sobte ABMs
 
 ## Requests HTTP
 
-Se pueden ver en el archivo <requests>.
+Se pueden ver en el archivo <./requests>.
 
 ## Queries SQL
 
-Se pueden ver en el archivo <queries.sql>.
+Se pueden ver en el archivo <./queries.sql>.
 
 

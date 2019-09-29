@@ -13,14 +13,17 @@ Content-Type: application/json
 	{"nombre": "Jane", "email": "gatamarmolada@gmail.com"}
 ]
 
+
+:id = 5
+
 # obtener un contacto
-GET http://localhost:5000/contactos/6
+GET http://localhost:5000/contactos/:id
 
 # borrar un contacto 
-DELETE http://localhost:5000/contactos/5
+DELETE http://localhost:5000/contactos/:id
 
 # actualizar un contacto 
-PUT http://localhost:5000/contactos/7
+PUT http://localhost:5000/contactos/:id
 Content-Type: application/json
 
 {"nombre": "Jane", "email": "marmolada@hotmail.com"}

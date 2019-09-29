@@ -7,10 +7,10 @@ Contactos con frontend, backend y persistencia - Ejercicio de QC sobte ABMs
 
 ## Requests HTTP
 
-Se pueden ver en el archivo <./requests>.
+Se pueden ver en el archivo [requests](https://github.com/nahual/qc-contactos-evolution/blob/master/requests).
 
 ## Queries SQL
 
-Se pueden ver en el archivo <./queries.sql>.
+Se pueden ver en el archivo [queries.sql](https://github.com/nahual/qc-contactos-evolution/blob/master/queries.sql).
 
 

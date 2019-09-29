@@ -14,7 +14,7 @@ Content-Type: application/json
 ]
 
 
-:id = 5
+:id = 7
 
 # obtener un contacto
 GET http://localhost:5000/contactos/:id

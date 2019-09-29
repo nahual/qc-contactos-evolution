@@ -3,7 +3,7 @@ Contactos con frontend, backend y persistencia - Ejercicio de QC sobte ABMs
 
 ## Deployado en Heroku
 
-<https://nameless-meadow-57142.herokuapp.com/>
+<https://nameless-meadow-57142.herokuapp.com/contactos>
 
 ## Requests HTTP
 

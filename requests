@@ -28,3 +28,8 @@ Content-Type: application/json
 
 {"nombre": "Jane", "email": "marmolada@hotmail.com"}
 
+# servidor get un contacto
+GET https://nameless-meadow-57142.herokuapp.com/contactos/:id
+
+# servdidor get todos los contactos
+GET https://nameless-meadow-57142.herokuapp.com/contactos

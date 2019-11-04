@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 	res.json(results.results);
     } catch (err) {
 	console.error(err);
-	res.send("Error " + err);
+	res.sendStatus(500);
     } finally {
 	client.release();
     }
@@ -30,7 +30,7 @@ router.delete('/', async (req, res) => {
 	res.json(results.results);
     } catch (err) {
 	console.error(err);
-	res.send("Error " + err);
+	res.sendStatus(500);
     } finally {
 	client.release();
     }
@@ -50,7 +50,7 @@ router.post('/', async (req, res) => {
 	res.json(results.results);
     } catch (err) {
 	console.error(err);
-	res.send("Error " + err);
+	res.sendStatus(500);
     } finally {
 	client.release();
     }
@@ -67,7 +67,7 @@ router.get('/:id', async (req, res) => {
 	res.json(results.results[0]);
     } catch (err) {
 	console.error(err);
-	res.send("Error " + err);
+	res.sendStatus(500);
     } finally {
 	client.release();
     }
@@ -84,7 +84,7 @@ router.delete('/:id', async (req, res) => {
 	res.json(results.results);
     } catch (err) {
 	console.error(err);
-	res.send("Error " + err);
+	res.sendStatus(500);
     } finally {
 	client.release();
     }

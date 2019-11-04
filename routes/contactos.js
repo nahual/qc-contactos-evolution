@@ -7,9 +7,10 @@ const pool = new Pool({
 });
 
 router.get('/', async (req, res) => {
+    const client = await pool.connect()
+
     try {
 	console.log("get all contacts");
-	const client = await pool.connect()
 	const result = await client.query('SELECT * FROM contactos');
 	const results = { 'results': (result) ? result.rows : null};
 	res.json(results.results);
@@ -22,9 +23,9 @@ router.get('/', async (req, res) => {
 });
 
 router.delete('/', async (req, res) => {
+    const client = await pool.connect()
     try {
 	console.log("delete all contacts");
-	const client = await pool.connect()
 	const result = await client.query('delete from contactos');
 	const results = { 'results': (result) ? result.rows : null};
 	res.json(results.results);
@@ -37,8 +38,8 @@ router.delete('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    const client = await pool.connect()
     try {
-	const client = await pool.connect()
 	let values = req.body.map(contact => {	    
 	    return `('${contact.nombre}', '${contact.email}')`;
 	}).join(", ");
@@ -57,8 +58,8 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
+    const client = await pool.connect()
     try {
-	const client = await pool.connect()
 	const query = 'SELECT * FROM contactos where id = ' + req.params.id;
 	console.log("get contact:", req.params.id, "SQL query:", query);
 
@@ -74,8 +75,9 @@ router.get('/:id', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
+    const client = await pool.connect()
+
     try {
-	const client = await pool.connect()
 	const query = 'DELETE FROM contactos WHERE id = ' + req.params.id;
 	console.log("delete contact:", req.params.id, "SQL query:", query);
 
@@ -91,6 +93,8 @@ router.delete('/:id', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
+    const client = await pool.connect();
+
     try {
 	let name = req.body.nombre;
 	let email = req.body.email;
@@ -98,7 +102,6 @@ router.put('/:id', async (req, res) => {
 	const query = `update contactos SET (nombre, email) = ('${name}', '${email}') where id = ${id}`;
 	console.log("update contact:", req.params.id, req.body, "SQL query:", query);
 
-	const client = await pool.connect();
 	const result = await client.query(query);
 	const results = { 'results': (result) ? result.rows : null};
 	res.json(results.results);

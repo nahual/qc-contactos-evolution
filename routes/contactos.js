@@ -13,10 +13,11 @@ router.get('/', async (req, res) => {
 	const result = await client.query('SELECT * FROM contactos');
 	const results = { 'results': (result) ? result.rows : null};
 	res.json(results.results);
-	client.release();
     } catch (err) {
 	console.error(err);
 	res.send("Error " + err);
+    } finally {
+	client.release();
     }
 });
 
@@ -27,10 +28,11 @@ router.delete('/', async (req, res) => {
 	const result = await client.query('delete from contactos');
 	const results = { 'results': (result) ? result.rows : null};
 	res.json(results.results);
-	client.release();
     } catch (err) {
 	console.error(err);
 	res.send("Error " + err);
+    } finally {
+	client.release();
     }
 });
 
@@ -46,16 +48,16 @@ router.post('/', async (req, res) => {
 	const result = await client.query(query);	    
 	const results = { 'results': (result) ? result.rows : null};
 	res.json(results.results);
-	client.release();
     } catch (err) {
 	console.error(err);
 	res.send("Error " + err);
+    } finally {
+	client.release();
     }
 });
 
 router.get('/:id', async (req, res) => {
     try {
-	console.log("contact id", req.params.id);
 	const client = await pool.connect()
 	const query = 'SELECT * FROM contactos where id = ' + req.params.id;
 	console.log("get contact:", req.params.id, "SQL query:", query);
@@ -63,16 +65,16 @@ router.get('/:id', async (req, res) => {
 	const result = await client.query(query);
 	const results = { 'results': (result) ? result.rows : null};
 	res.json(results.results[0]);
-	client.release();
     } catch (err) {
 	console.error(err);
 	res.send("Error " + err);
+    } finally {
+	client.release();
     }
 });
 
 router.delete('/:id', async (req, res) => {
     try {
-	console.log("contact id", req.params.id);
 	const client = await pool.connect()
 	const query = 'DELETE FROM contactos WHERE id = ' + req.params.id;
 	console.log("delete contact:", req.params.id, "SQL query:", query);
@@ -80,10 +82,11 @@ router.delete('/:id', async (req, res) => {
 	const result = await client.query(query);
 	const results = { 'results': (result) ? result.rows : null};
 	res.json(results.results);
-	client.release();
     } catch (err) {
 	console.error(err);
 	res.send("Error " + err);
+    } finally {
+	client.release();
     }
 });
 
@@ -99,10 +102,11 @@ router.put('/:id', async (req, res) => {
 	const result = await client.query(query);
 	const results = { 'results': (result) ? result.rows : null};
 	res.json(results.results);
-	client.release();
     } catch (err) {
 	console.error(err);
 	res.send("Error " + err);
+    } finally {
+	client.release();
     }
 });
 

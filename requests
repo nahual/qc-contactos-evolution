@@ -29,7 +29,21 @@ Content-Type: application/json
 {"nombre": "Jane", "email": "marmolada@hotmail.com"}
 
 # servidor get un contacto
-GET https://nameless-meadow-57142.herokuapp.com/contactos/:id
+GET https://nahual-contactos-evolution.herokuapp.com/contactos/:id
 
 # servdidor get todos los contactos
-GET https://nameless-meadow-57142.herokuapp.com/contactos
+GET https://nahual-contactos-evolution.herokuapp.com/contactos
+
+# servidor agregar contactos
+POST https://nahual-contactos-evolution.herokuapp.com/contactos
+Content-Type: application/json
+
+[
+	{"nombre": "Aloha", "email": "aloha@gmail.com"},
+	{"nombre": "Mora", "email": "mora@gmail.com"}
+]
+
+# servidor agregar contactos ERRONEO
+POST https://nahual-contactos-evolution.herokuapp.com/contactos
+Content-Type: application/json
+
